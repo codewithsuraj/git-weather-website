@@ -9,7 +9,7 @@ const forecast = (latitude, longitude, callback) => {
           } else if (body.message) {
                callback('Unable to find location!', undefined)
           } else{
-               callback(undefined, body.weather[0].description + ', It is currently ' + body.main.temp + ' degress out. It feels like ' + body.main.feels_like +' degress out.');
+               callback(undefined, body.weather[0].description + ', It is currently ' + body.main.temp + ' degress out. This high today is '+ body.main.temp_max + ' with a low of '+ body.main.temp_min +'. It feels like ' + body.main.feels_like +' degress out. The humidity is ' + body.main.humidity + '%.' );
           }
      });
 }
